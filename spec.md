@@ -6,7 +6,7 @@ It follows the SwipeFolio `spec.md` example from the lecture.
 The spec has two layers:
 
 - **Behavior layer** (AI-assisted, human-reviewed): rules, examples, and acceptance criteria.
-- **Technical layer** (AI-drafted, verification pending): the interface the code must follow.
+- **Technical layer** (AI-drafted, human-reviewed): the interface the code must follow.
 
 ## Traceability
 
