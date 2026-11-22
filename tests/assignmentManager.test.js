@@ -64,4 +64,31 @@ describe("Assignment Manager Tests", () => {
     expect(assignments).toEqual([]);
   });
 
+  test("NFR-03: Invalid submission preserves saved assignments", () => {
+    // Arrange
+    const manager = new AssignmentManager();
+
+    manager.addAssignment({
+      course: "CS445",
+      title: "Testing Milestone",
+      dueDate: "2026-11-22"
+    });
+
+    const before = manager.getAssignments();
+
+    // Act
+    const result = manager.addAssignment({
+      course: "",
+      title: "Invalid Assignment",
+      dueDate: "2026-11-22"
+    });
+
+    const after = manager.getAssignments();
+
+    // Assert
+    expect(result).toBe(false);
+    expect(after).toEqual(before);
+    expect(after).toHaveLength(1);
+  });
+
 });
